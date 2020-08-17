@@ -1,37 +1,32 @@
 class Web::Admin::ProductsController < Web::Admin::ApplicationController
-
-def index
+  def index
     @products = Product.all
-end
+  end
 
-def new
-end
+  def new; end
 
-def create
-end
+  def create; end
 
-def show
-end
+  def show; end
 
-def edit
+  def edit
     @product = Product.find(params[:id])
-end
+  end
 
-def update
+  def update
     @product = Product.find(params[:id])
     if @product.update(product_attrs)
       redirect_to action: :show
     else
       render action: :show
     end
-end
+  end
 
-def destroy
-end
+  def destroy; end
 
-private
+  private
 
-def product_attrs
+  def product_attrs
     params.require(:product).permit(:name, :description, :price, :image)
-end
+  end
 end
