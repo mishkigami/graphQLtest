@@ -1,0 +1,21 @@
+@import "bootstrap";
+.up {
+      height: 10vh;
+      background-image: url('background.jpeg');
+      background-size: cover;
+      text-align:  center;
+      font-size: 50px
+    }
+.center {
+    height: 5vh;
+    background: hsl(0, 88%, 31%) ;
+        }
+.down {
+        height: 85vh;
+      }
+.backlogo {
+    background-image: url('logo.jpeg');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}
