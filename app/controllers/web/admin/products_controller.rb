@@ -3,11 +3,22 @@ class Web::Admin::ProductsController < Web::Admin::ApplicationController
     @products = Product.all
   end
 
-  def new; end
+  def new
+    @product = Product.new
+  end
 
-  def create; end
+  def create
+    @product = Product.new(product_attrs)
+    if @product.save
+      redirect_to action: :index
+    else
+      render action: :new
+    end
+  end
 
-  def show; end
+  def show
+    @product = Product.find(params[:id])
+  end
 
   def edit
     @product = Product.find(params[:id])
@@ -16,13 +27,17 @@ class Web::Admin::ProductsController < Web::Admin::ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(product_attrs)
-      redirect_to action: :show
+      redirect_to  admin_products_path
     else
-      render action: :show
+      redirect_to  edit_admin_product_path
     end
   end
 
-  def destroy; end
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    redirect_to action: :index
+  end
 
   private
 

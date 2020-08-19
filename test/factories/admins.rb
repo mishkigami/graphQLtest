@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :admin do
-    name 
+    name
     email
     password
   end

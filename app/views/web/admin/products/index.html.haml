@@ -7,8 +7,9 @@
   - @products.each do |product|
     %tr.bg-success
     %td= product.name
-    %th= image_tag(product.image) if product.image.present?
+    %th= image_tag(product.image, width: '100px') if product.image.present?
     %td= product.description
     %td= number_to_currency(product.price)
-    %td=link_to t('.view profile'), edit_admin_product_path(product)
+    %td=link_to t('.view profile'), admin_product_path(product)
+=link_to t('.create'), new_admin_product_path(@product)
 

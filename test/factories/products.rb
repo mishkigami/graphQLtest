@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :product do
-    price { '' }
-    description { 'MyText' }
+    name
+    price
+    description
   end
 end

@@ -3,7 +3,7 @@ FactoryBot.define do
     0 + n
   end
 
-  sequence :string, aliases: %i[name password ] do |n|
+  sequence :string, aliases: %i[name password] do |n|
     "teststring#{n}"
   end
 

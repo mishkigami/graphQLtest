@@ -1,0 +1,15 @@
+%table.table
+  %thead
+    %tr
+      %th Название
+      %th Цена
+      %th Описание
+      %th Изображение
+      %th Управление
+  %tbody
+    %tr
+      %td=@product.name
+      %td=number_to_currency(@product.price)
+      %td=@product.description
+      %td=image_tag(@product.image, width: '100px') if @product.image.present?
+      %td=link_to t('.view edit'), edit_admin_product_path(@product)
