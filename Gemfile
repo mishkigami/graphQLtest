@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
+gem 'react-rails'
 gem 'bootstrap', '~> 4.4.1'
 gem 'haml-rails', '~> 2.0'
 gem 'jquery-rails'
